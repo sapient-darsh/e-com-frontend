@@ -13,7 +13,7 @@ const Header = () => {
       <nav className="flex justify-around items-center py-2 bg-commonGreen ">
         <div>
           <Image
-            src="/img/logo/logo-light-full.png"
+            src="/img/logo/logo-dark-full.png"
             alt="logo"
             width={150}
             height={60}

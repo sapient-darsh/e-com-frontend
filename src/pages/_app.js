@@ -1,12 +1,12 @@
 import "../styles/globals.css";
-import { Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
 // import Header from "../components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const outfit = Outfit({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }) {
   return (
-    <main className={inter.className}>
+    <main className={outfit.className}>
       {/* <Header /> */}
       <Component {...pageProps} />
     </main>

@@ -19,6 +19,36 @@ const electroCat_images = [
   "/img/categories/electro.png",
   "/img/categories/p1.png",
 ];
+const categories = [
+  {
+    _id: 1,
+    titel: "Women's Wear",
+    offer: "10% off",
+    images: womenCat_images,
+    class: "col-sapn-1 h-auto  md:h-600 bg-categoryBgOrange",
+  },
+  {
+    _id: 2,
+    titel: "Jewellery",
+    offer: "12% off",
+    images: jewelCat_images,
+    class: "col-sapn-1 h-auto  md:h-600 bg-categoryBgYellow",
+  },
+  {
+    _id: 3,
+    titel: "Beauty",
+    offer: "15% off",
+    images: beautyCat_images,
+    class: "col-sapn-1 h-auto  md:h-600 bg-categoryBgRed",
+  },
+  {
+    _id: 4,
+    titel: "Electronic",
+    offer: "25% off",
+    images: electroCat_images,
+    class: "col-sapn-1 h-auto  md:h-600 bg-categoryBgGrren",
+  },
+];
 
 const CategoriesSection = () => {
   return (
@@ -33,7 +63,7 @@ const CategoriesSection = () => {
           Men's Wear
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 m-8">
-          <div className=" col-sapn-1 flex flex-col justify-center items-center md:h-500 mx-4">
+          <div className=" col-sapn-1 flex flex-col justify-center items-center md:h-450 mx-4 my-12 md:my-0">
             <div className="text-4xl font-normal my-4">
               Best Deals on Men's Wear
             </div>
@@ -44,88 +74,35 @@ const CategoriesSection = () => {
               <Link href="/">Buy Now</Link>
             </button>
           </div>
-          <div className=" col-sapn-1 flex justify-center items-center md:h-500 mx-4">
+          <div className=" col-sapn-1 flex justify-center items-center md:h-500 m-4">
             <SliderComponent images={mensCat_images} width="300" height="300" />
           </div>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2  mb-8 ">
-        <div className="col-sapn-1 bg-categoryBgOrange h-auto  md:h-600">
-          <div className="font-bold text-3xl text-black  text-center my-10">
-            Women's Wear
-          </div>
-          <div className="bg-offerOrange text-white w-32  text-2xl font-bold mb-8  p-2  ">
-            <div className="">10 % Off</div>
-          </div>
-          <div className="flex justify-center items-center md:h-300 mx-4">
-            <SliderComponent
-              images={womenCat_images}
-              width="200"
-              height="200"
-            />
-          </div>
+        {categories.map((item) => {
+          return (
+            <div className={item.class}>
+              <div className="font-bold text-3xl text-black  text-center my-10">
+                {item.titel}
+              </div>
+              <div className="bg-offerOrange text-white w-32  text-2xl font-bold mb-8  p-2  ">
+                <div className="">{item.offer}</div>
+              </div>
+              <div className="flex justify-center items-center md:h-300 mx-4">
+                <SliderComponent
+                  images={item.images}
+                  width="200"
+                  height="200"
+                />
+              </div>
 
-          <div className="flex justify-center items-center text-2xl font-bold m-8    hover:opacity-70">
-            <Link href="/">Explore All Deals -{`>`}</Link>
-          </div>
-        </div>
-        <div className="col-sapn-1 bg-categoryBgYellow h-auto md:h-600">
-          <div className="font-bold text-3xl text-black  text-center my-10">
-            Jewellery
-          </div>
-          <div className="bg-offerOrange text-white w-32  text-2xl font-bold mb-8  p-2  ">
-            <div className="">10 % Off</div>
-          </div>
-          <div className="flex justify-center items-center md:h-300 mx-4">
-            <SliderComponent
-              images={jewelCat_images}
-              width="200"
-              height="200"
-            />
-          </div>
-
-          <div className="flex justify-center items-center text-2xl font-bold m-8    hover:opacity-70">
-            <Link href="/">Explore All Deals -{`>`}</Link>
-          </div>
-        </div>
-        <div className="col-sapn-1 bg-categoryBgRed h-auto md:h-600">
-          <div className="font-bold text-3xl text-black  text-center my-10">
-            Beauty
-          </div>
-          <div className="bg-offerOrange text-white w-32  text-2xl font-bold mb-8  p-2  ">
-            <div className="">10 % Off</div>
-          </div>
-          <div className="flex justify-center items-center md:h-300 mx-4">
-            <SliderComponent
-              images={beautyCat_images}
-              width="200"
-              height="200"
-            />
-          </div>
-
-          <div className="flex justify-center items-center text-2xl font-bold m-8    hover:opacity-70">
-            <Link href="/">Explore All Deals -{`>`}</Link>
-          </div>
-        </div>
-        <div className="col-sapn-1 bg-categoryBgGrren h-auto md:h-600">
-          <div className="font-bold text-3xl text-black  text-center my-10">
-            Electronic
-          </div>
-          <div className="bg-offerOrange text-white w-32  text-2xl font-bold mb-8  p-2  ">
-            <div className="">10 % Off</div>
-          </div>
-          <div className="flex justify-center items-center md:h-300 mx-4">
-            <SliderComponent
-              images={electroCat_images}
-              width="200"
-              height="200"
-            />
-          </div>
-
-          <div className="flex justify-center items-center text-2xl font-bold m-8    hover:opacity-70">
-            <Link href="/">Explore All Deals -{`>`}</Link>
-          </div>
-        </div>
+              <div className="flex justify-center items-center text-2xl font-bold m-8    hover:opacity-70">
+                <Link href="/">Explore All Deals -{`>`}</Link>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

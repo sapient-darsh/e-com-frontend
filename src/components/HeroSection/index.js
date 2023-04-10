@@ -11,8 +11,8 @@ const HeroSection = () => {
             className=" relative  rounded"
             src="/img/man.png"
             alt="hero"
-            width={500}
-            height={500}
+            width={470}
+            height={470}
           />
         </div>
         <div className="col-sapn-1 px-6  flex flex-col justify-center items-center  text-center">
